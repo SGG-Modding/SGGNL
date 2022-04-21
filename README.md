@@ -7,8 +7,8 @@
 4. open the project and build it
 5. open a command prompt in the folder containing the results
 6. run ``MonoMod.exe Engine.dll``
-7. copy the `MONOMODDED_Engine.dll` file into the folder you just copied the filesd from into vanilla
-8. remove the `Engine.dll` or rename it to something like `vanilla_Engine.dll`
-9. rename `MONOMODDED_Engine.dll` to `Engine.dll`
-10. Enjoy
-Hook generation coming soon
+7. run ``MonoMod.RuntimeDetour.HookGen.exe --private MONOMODDED_Engine.dll``
+8. copy the `MONOMODDED_Engine.dll`, `MONOMODDED_Engine.pdb` and `MMHOOK_MONOMODDED_Engine.dll` files into the folder you just copied the filesd from into vanilla
+9. remove the `Engine.dll` or rename it to something like `vanilla_Engine.dll`
+10. rename remove `MONOMODDED_` from the files you copied to the folder
+11. Enjoy
