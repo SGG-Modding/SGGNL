@@ -13,6 +13,8 @@
 10. rename remove `MONOMODDED_` from the files you copied to the folder
 11. Enjoy!
 
+Part 6, 7 and 10 will be automated soon (hopefully)
+
 ## How to create a mod
 1. Create a class library (.net framework) using visual studio 2022 and select .net framework 4.5
 2. Add `Engine.dll` and `MMHOOK_Engine.dll` to the references
