@@ -11,4 +11,16 @@
 8. copy the `MONOMODDED_Engine.dll`, `MONOMODDED_Engine.pdb` and `MMHOOK_MONOMODDED_Engine.dll` files into the folder you just copied the filesd from into vanilla
 9. remove the `Engine.dll` or rename it to something like `vanilla_Engine.dll`
 10. rename remove `MONOMODDED_` from the files you copied to the folder
-11. Enjoy
+11. Enjoy!
+
+## How to create a mod
+1. Create a class library (.net framework) using visual studio 2022 and select .net framework 4.5
+2. Add `Engine.dll` and `MMHOOK_Engine.dll` to the references
+3. For your base class, extend Mod
+4. Create a constructor
+5. Have fun!
+
+## How to install a mod
+1. In the folder containing the game exe, create a folder called `mods`.
+2. Place the mod's dll inside
+3. Enjoy whatever the mod does
