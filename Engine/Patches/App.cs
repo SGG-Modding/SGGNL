@@ -9,8 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-#pragma warning disable 1591
-#pragma warning disable CS0108, CS0626
+#pragma warning disable CS0626, CS0114
 
 namespace Engine.Patches
 {
