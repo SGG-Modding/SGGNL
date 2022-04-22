@@ -21,28 +21,7 @@ namespace Engine.Patches
         public void Initialize()
         {
 
-            var dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            string[] files = Directory.GetFiles(Path.Combine(dir,"mods"), "*.dll");
-
-            for(int i = 0; i < files.Length; i++)
-            {
-                Assembly asm = Assembly.LoadFrom(files[i]);
-
-                Type[] types = asm.GetTypes();
-
-                for (int j = 0; j < types.Length; j++) 
-                {
-                    Type type = types[j];
-                    if (!type.IsClass || type.IsAbstract || !type.IsSubclassOf(typeof(Mod)))
-                        continue;
-
-                    if (type.GetConstructor(Type.EmptyTypes)?.Invoke(new Object[0]) is Mod mod)
-                    {
-
-                    }
-                }
-            }
+            ModLoader.LoadMods();
 
             orig_Initialize();
 
