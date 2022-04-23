@@ -11,12 +11,16 @@
     <RootNamespace>Modding</RootNamespace>
     <AssemblyName>Engine.mm</AssemblyName>
     <TargetFramework>net452</TargetFramework>
-    <FileAlignment>512</FileAlignment>
+    <FileAlignment>4096</FileAlignment>
     <Deterministic>true</Deterministic>
     <BuildDependsOn>
         BeforeBuild;
     </BuildDependsOn>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <IsPublishable>True</IsPublishable>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/SGG-Modding/Transistor.Modding</RepositoryUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <NoWarn>1701;1702;MSB3270</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +41,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>1701;1702;MSB3270</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Engine">
@@ -66,5 +72,11 @@
   </ItemGroup>
   <ItemGroup>
     <VanillaFiles Include="$(SolutionDir)vanilla\**\*.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
