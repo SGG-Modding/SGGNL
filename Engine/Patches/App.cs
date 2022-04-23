@@ -5,7 +5,7 @@
 namespace Modding.Patches
 {
     [MonoModPatch("global::GSGE.App")]
-    public class App : global::GSGE.App
+    public class App
     {
         public extern void orig_Initialize();
 
