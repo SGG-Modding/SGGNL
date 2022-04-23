@@ -1,17 +1,8 @@
-﻿using GSGE;
-using MonoMod;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using MonoMod;
 
 #pragma warning disable CS0626, CS0114
 
-namespace Engine.Patches
+namespace Modding.Patches
 {
     [MonoModPatch("global::GSGE.App")]
     public class App : global::GSGE.App
