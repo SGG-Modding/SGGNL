@@ -12,9 +12,16 @@ namespace Modding
 
         internal static void LoadMods()
         {
-            var dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            string[] files = Directory.GetFiles(Path.Combine(dir, "..", "Content", "EngineMods"), "*.dll");
+            string path = Path.Combine(dir, "..", "Content", "EngineMods");
+
+            if(!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            string[] files = Directory.GetFiles(path, "*.dll");
 
             for (int i = 0; i < files.Length; i++)
             {
