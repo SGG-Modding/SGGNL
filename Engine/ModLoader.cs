@@ -14,7 +14,7 @@ namespace Modding
         {
             var dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            string[] files = Directory.GetFiles(Path.Combine(dir, "mods"), "*.dll");
+            string[] files = Directory.GetFiles(Path.Combine(dir, "..", "Content", "EngineMods"), "*.dll");
 
             for (int i = 0; i < files.Length; i++)
             {

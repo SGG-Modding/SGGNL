@@ -8,7 +8,7 @@
     <ProjectGuid>{2C4F2247-14E2-4673-A5CC-24200D88B5B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Engine</RootNamespace>
+    <RootNamespace>Modding</RootNamespace>
     <AssemblyName>Engine.mm</AssemblyName>
     <TargetFramework>net452</TargetFramework>
     <FileAlignment>512</FileAlignment>
