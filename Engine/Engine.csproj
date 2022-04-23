@@ -20,7 +20,7 @@
     <IsPublishable>True</IsPublishable>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/SGG-Modding/Transistor.Modding</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SGG-Modding/SGGNL</RepositoryUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
