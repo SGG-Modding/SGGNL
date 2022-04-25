@@ -1,4 +1,4 @@
-# SuperGiant Games .Net Loader (SGGNL)
+# SuperGiant Games .NET Loader (SGGNL)
 
 ## How to build
 1. create a folder called `vanilla`
