@@ -29,7 +29,7 @@ if not VANILLA.exists():
     os.mkdir(VANILLA)
 
 for path in os.scandir(GAME):
-    if path.is_file() and path.name[:-4] in TYPES:
+    if path.is_file() and path.name[-4:] in TYPES:
         copy(path, VANILLA / path.name)
     
 import build
