@@ -1,0 +1,2 @@
+#the python build/patch helper scripts shouldn't dominate the repo's language detection
+*.py -linguist-detectable
