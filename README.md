@@ -1,15 +1,15 @@
 # SuperGiant Games .NET Loader (SGGNL)
 
 ## How to build
-1. create a folder called `vanilla`
+1. create a folder called `Vanilla`
 2. drop your game binaries (`*.dll`, `*.exe`) in there (<GAMEFOLDER>/x64). x86 may very well work too but isn't tested yet
-3. The game doesn't bundle a file that is required to build, because GamepadBridge.dll lists it as a dependency. Download that from [here](https://files.catbox.moe/6yhtsb.dll) rename it to `Tao.sdl.dll` and place it in the `vanilla` folder.
+3. The game doesn't bundle a file that is required to build, because GamepadBridge.dll lists it as a dependency. Download that from [here](https://files.catbox.moe/6yhtsb.dll) rename it to `Tao.sdl.dll` and place it in the `Vanilla` folder.
 4. open the project and build it
 5. open a command prompt in the folder containing the results
 6. run ``MonoMod.exe Engine.dll``
 7. remove any instances of `MONOMODDED_` from the names of the files it produced
 8. run ``MonoMod.RuntimeDetour.HookGen.exe --private Engine.dll``
-9. backup your Engine.dll from the game (rename to Engine.dll.bak or vanilla_Engine.dll etc.)
+9. backup your Engine.dll from the game (rename to Engine.dll.bak or Vanilla_Engine.dll etc.)
 10. copy the `Engine.dll`, `Engine.pdb` and `MMHOOK_Engine.dll` files into the game
 11. Enjoy!
 
