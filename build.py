@@ -4,9 +4,9 @@ from shutil import copy, move
 from subprocess import run
 
 HERE = Path(os.getcwd())
-BUILD = ("dotnet", "build")
-PATCHED = HERE / "Patched"
 VANILLA = HERE / "Vanilla"
+PATCHED = HERE / "Patched"
+BUILD = ("dotnet", "build")
 BINARIES = HERE / "Engine/bin/Debug/net452"
 MONOMOD = BINARIES / "MonoMod.exe"
 HOOKGEN = BINARIES / "MonoMod.RuntimeDetour.HookGen.exe"
