@@ -8,7 +8,7 @@
 
 ## How to build (manual)
 1. create a folder called `Vanilla`
-2. drop your game binaries (`*.dll`, `*.exe`) in there (<GAMEFOLDER>/x64). x86 may very well work too but isn't tested yet
+2. drop your game binaries (`*.dll`, `*.exe`) in there (GAMEFOLDER/`x64`). x86 may very well work too but isn't tested yet
 3. If the game is Transistor, it doesn't bundle a file that is required to build, because GamepadBridge.dll lists it as a dependency. Download that from [here](https://files.catbox.moe/6yhtsb.dll) rename it to `Tao.sdl.dll` and place it in the `Vanilla` folder.
 4. open the project and build it
 5. open a command prompt in the folder containing the results
