@@ -6,8 +6,6 @@
 3. If the game is Transistor, it doesn't bundle a file that is required to build, because GamepadBridge.dll lists it as a dependency. Download that from [here](https://files.catbox.moe/6yhtsb.dll), rename `6yhtsb.dll` it to `Tao.sdl.dll` and place it in the `Vanilla` folder, then repeat step 2.
 4. Enjoy!
 
-TODO: script that when given your game binaries folder does the whole process
-
 ## How to create a mod
 1. Create a class library (.net framework) using visual studio 2022 and select .net framework 4.5
 2. Add `Engine.dll` and `MMHOOK_Engine.dll` to the references
