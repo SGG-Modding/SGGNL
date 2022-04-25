@@ -1,13 +1,18 @@
 import os
 import sys
 from pathlib import Path
-from shutil import copy
+from shutil import copy, move
 from subprocess import run
+import urllib.request
 
 HERE = Path(os.getcwd())
 VANILLA = HERE / "Vanilla"
 PATCHED = HERE / "Patched"
 TYPES = {".exe", ".dll"}
+
+NEEDTAO = {"Transistor"}
+TAOURL = "https://files.catbox.moe/6yhtsb.dll"
+TAOFILE = VANILLA / "Tao.sdl.dll"
 
 GAME = None
 
@@ -31,7 +36,11 @@ if not VANILLA.exists():
 for path in os.scandir(GAME):
     if path.is_file() and path.name[-4:] in TYPES:
         copy(path, VANILLA / path.name)
-    
+
+if GAME.parent.name in NEEDTAO and not TAOFILE.exists():
+    with open(TAOFILE, "wb") as file:
+        file.write(urllib.request.urlopen(TAOURL).read())
+
 import build
 
 for path in os.scandir(PATCHED):
