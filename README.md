@@ -4,16 +4,11 @@
 1. create a folder called `Vanilla`
 2. drop your game binaries (`*.dll`, `*.exe`) in there (<GAMEFOLDER>/x64). x86 may very well work too but isn't tested yet
 3. The game doesn't bundle a file that is required to build, because GamepadBridge.dll lists it as a dependency. Download that from [here](https://files.catbox.moe/6yhtsb.dll) rename it to `Tao.sdl.dll` and place it in the `Vanilla` folder.
-4. open the project and build it
-5. open a command prompt in the folder containing the results
-6. run ``MonoMod.exe Engine.dll``
-7. remove any instances of `MONOMODDED_` from the names of the files it produced
-8. run ``MonoMod.RuntimeDetour.HookGen.exe --private Engine.dll``
-9. backup your Engine.dll from the game (rename to Engine.dll.bak or Vanilla_Engine.dll etc.)
-10. copy the `Engine.dll`, `Engine.pdb` and `MMHOOK_Engine.dll` files into the game
-11. Enjoy!
+4. run build.py with python 3.8 and look in the newly created `Patched` folder
+5. copy the `Engine.dll`, `Engine.pdb` and `MMHOOK_Engine.dll` files into the game
+6. Enjoy!
 
-Part 5, 6, 7, 8 and 10 will be automated soon (hopefully)
+TODO: script that when given your game binaries folder does the whole process
 
 ## How to create a mod
 1. Create a class library (.net framework) using visual studio 2022 and select .net framework 4.5
