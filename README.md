@@ -2,7 +2,7 @@
 
 ## How to build
 1. Install python 3.8 or later and Visual Studio (2019 or 2022) for .NET 4.5
-2. Run `patch.py`
+2. Run `patch.py` with python
 3. Provide it with your path to your game binaries (GAMEFOLDER/`x64` or GAMEFOLDER/`x86` etc)
 4. Enjoy!
 
