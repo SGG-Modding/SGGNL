@@ -1,12 +1,10 @@
 # SuperGiant Games .NET Loader (SGGNL)
 
 ## How to build
-1. create a folder called `Vanilla`
-2. drop your game binaries (`*.dll`, `*.exe`) in there (GAMEFOLDER/`x64`). x86 may very well work too but isn't tested yet
-3. The game doesn't bundle a file that is required to build, because GamepadBridge.dll lists it as a dependency. Download that from [here](https://files.catbox.moe/6yhtsb.dll) rename it to `Tao.sdl.dll` and place it in the `Vanilla` folder.
-4. run build.py with python 3.8 and look in the newly created `Patched` folder
-5. copy the `Engine.dll`, `Engine.pdb` and `MMHOOK_Engine.dll` files into the game
-6. Enjoy!
+1. run 'patch.py' with python 3.8 or later
+2. provide it with your path to your game binaries (GAMEFOLDER/`x64` or GAMEFOLDER/`x86` etc)
+3. If the game is Transistor, it doesn't bundle a file that is required to build, because GamepadBridge.dll lists it as a dependency. Download that from [here](https://files.catbox.moe/6yhtsb.dll), rename `6yhtsb.dll` it to `Tao.sdl.dll` and place it in the `Vanilla` folder, then repeat step 2.
+4. Enjoy!
 
 TODO: script that when given your game binaries folder does the whole process
 
