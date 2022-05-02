@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modding.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -7,8 +8,8 @@ namespace Modding
 {
     public class ModLoader
     {
-
-        static List<Mod> modList = new List<Mod>();
+        static readonly List<string> modNames = new List<string>();
+        static readonly Dictionary<string, ModData> modList = new Dictionary<string, ModData>();
 
         internal static void LoadMods()
         {
@@ -35,10 +36,54 @@ namespace Modding
                     if (!type.IsClass || type.IsAbstract || !type.IsSubclassOf(typeof(Mod)))
                         continue;
 
-                    if (type.GetConstructor(Type.EmptyTypes)?.Invoke(new Object[0]) is Mod mod)
+                    try
                     {
-                        modList.Add(mod);
+                        if (type.GetConstructor(Type.EmptyTypes)?.Invoke(new object[0]) is Mod mod)
+                        {
+                            if (modNames.Contains(mod.Name))
+                                throw new DuplicateModException("Mod name already registered. Are you trying to load several versions?");
+
+                            modList.Add(mod.Name, new ModData(mod, ModStatus.LOADED));
+                            modNames.Add(mod.Name);
+                        }
                     }
+                    //TODO: log error to future console
+                    catch (DuplicateModException ex)
+                    {
+
+                    }
+                    //TODO: log error to future console
+                    catch (Exception ex)
+                    {
+                        modList.Add(asm.GetName().Name, new ModData(ModStatus.FAILED, "Mod failed to be constructed"));
+                    }
+                }
+            }
+
+            InitializeMods();
+        }
+
+        internal static void InitializeMods()
+        {
+            for(int i = 0; i < modNames.Count; i++)
+            {
+                try
+                {
+                    ModData mod = modList[modNames[i]];
+
+                    if (mod.status == ModStatus.LOADED)
+                    {
+
+                        mod.mod.Initialize();
+
+                        mod.status = ModStatus.INITIALIZED;
+                    }
+                }
+                //TODO: log error to future console
+                catch (Exception ex)
+                {
+                    modList[modNames[i]].status = ModStatus.FAILED;
+                    modList[modNames[i]].error = "Failed to initialize";
                 }
             }
         }
