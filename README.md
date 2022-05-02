@@ -23,8 +23,7 @@
 1. Create a class library (.net framework) using visual studio 2022 and select .net framework 4.5
 2. Add `Engine.dll` and `MMHOOK_Engine.dll` to the references
 3. For your base class, extend Mod
-4. Create a constructor
-5. Have fun!
+4. Have fun!
 
 ## How to install a mod
 1. In the game's `Content` folder, create a folder called `EngineMods`.
