@@ -15,7 +15,9 @@ namespace Modding
         {
             string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            string path = Path.Combine(dir, "..", "Content", "EngineMods");
+            string contentDir = (Directory.Exists(Path.Combine(dir, "Content"))) ? Path.Combine(dir, "Content") : Path.Combine(dir, "..", "Content");
+
+            string path = Path.Combine(contentDir, "EngineMods");
 
             if(!Directory.Exists(path))
             {
