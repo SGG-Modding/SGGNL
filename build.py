@@ -21,6 +21,7 @@ MONO = "Mono"
 EXE = ".exe"
 GAMEEXES = {"Bastion.exe"}
 GAMEDATA = ENGINEDLL
+SGGNL = "SGGNL.dll"
 
 if not PATCHED.exists():
     os.mkdir(PATCHED)
@@ -54,5 +55,5 @@ copy(BINARIES / MMHOOK, PATCHED / MMHOOK)
 copy(BINARIES / GAMEDATA, PATCHED / GAMEDATA)
 
 for path in os.scandir(BINARIES):
-    if path.is_file() and path.name[:4] == MONO:
+    if path.is_file() and (path.name == SGGNL or path.name[:4] == MONO):
         copy(path, PATCHED / path.name)
