@@ -1,4 +1,4 @@
-﻿namespace Modding
+﻿namespace SGGNL
 {
     public class ModData
     {

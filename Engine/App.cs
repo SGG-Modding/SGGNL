@@ -2,7 +2,7 @@
 
 #pragma warning disable CS0626, CS0114
 
-namespace Modding.Patches
+namespace SGGNL
 {
     [MonoModPatch("global::GSGE.App")]
     public class App

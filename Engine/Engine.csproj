@@ -74,9 +74,6 @@
     <VanillaFiles Include="$(SolutionDir)vanilla\**\*.*" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <ProjectReference Include="..\SGGNL\SGGNL.csproj" />
   </ItemGroup>
 </Project>

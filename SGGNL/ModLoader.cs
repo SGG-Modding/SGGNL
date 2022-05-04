@@ -1,17 +1,17 @@
-﻿using Modding.Exceptions;
+﻿using SGGNL.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-namespace Modding
+namespace SGGNL
 {
     public class ModLoader
     {
         static readonly List<string> modNames = new List<string>();
         static readonly Dictionary<string, ModData> modList = new Dictionary<string, ModData>();
 
-        internal static void LoadMods()
+        public static void LoadMods()
         {
             string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
@@ -19,7 +19,7 @@ namespace Modding
 
             string path = Path.Combine(contentDir, "EngineMods");
 
-            if(!Directory.Exists(path))
+            if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
@@ -67,7 +67,7 @@ namespace Modding
 
         internal static void InitializeMods()
         {
-            for(int i = 0; i < modNames.Count; i++)
+            for (int i = 0; i < modNames.Count; i++)
             {
                 try
                 {
