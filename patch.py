@@ -8,13 +8,18 @@ import urllib.request
 HERE = Path(os.getcwd())
 VANILLA = HERE / "Vanilla"
 PATCHED = HERE / "Patched"
-TYPES = {".exe", ".dll"}
+TYPES = {".exe", ".dll", ".bak"}
 
 NEEDTAO = {"Transistor"}
 TAOURL = "https://files.catbox.moe/6yhtsb.dll"
 TAOFILE = VANILLA / "Tao.sdl.dll"
 
 GAME = None
+
+def gamestr(game):
+    if game.name[0] == 'x':
+        return f"{game.parent.name}'s {game.name}"
+    return f"{game.name}'s"
 
 if len(sys.argv) > 1:
     s = sys.argv[1]
@@ -28,24 +33,24 @@ else:
         if not s:
             exit()
         GAME = Path(s)
-    print(f"Patching {GAME.parent.name}'s {GAME.name} binaries...")
+    print(f"Patching {gamestr(GAME)} binaries...")
 
 if not VANILLA.exists():
     os.mkdir(VANILLA)
 
 for path in os.scandir(GAME):
-    if path.is_file() and path.name[-4:] in TYPES:
+    if path.is_file() and (t == path.name[-len(t):] for t in TYPES):
         copy(path, VANILLA / path.name)
 
 if GAME.parent.name in NEEDTAO and not TAOFILE.exists():
     with open(TAOFILE, "wb") as file:
         file.write(urllib.request.urlopen(TAOURL).read())
 
-import build
+from build import *
 
 for path in os.scandir(PATCHED):
     if path.is_file():
         copy(path, GAME / path.name)
 
 if len(sys.argv) == 1:
-    input(f"Patched {GAME.parent.name}'s {GAME.name} binaries! Press ENTER to exit program...")
+    input(f"Patched {gamestr(GAME)} binaries! Press ENTER to exit program...")
